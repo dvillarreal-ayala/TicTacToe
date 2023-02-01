@@ -10,6 +10,12 @@
  * @version: Jan 2023
  */
 
+/**
+ *call repaint() after printBoard()
+ * declare the View as instance variable
+ * Initialize the View in the constructor
+ */
+import javax.swing.text.View;
 import java.util.Scanner;
 
 public class TicTacToe
@@ -35,6 +41,9 @@ public class TicTacToe
     private Square[][] board;
     private boolean isGameOver;
 
+    //Declare View as an instance variable
+    private TicTacToeViewer ticTacToeViewer;
+
     /**
      * Constructor which initialized the board with BLANKs.
      * The winner is also initialized to BLANK.
@@ -42,6 +51,7 @@ public class TicTacToe
      * The view is initialized with this TicTacToe object
      */
     public TicTacToe() {
+        //Initialize TicTacToeViewer inside Constructor
         // Initialize Squares in the board
         this.board = new Square[3][3];
         for(int row = 0; row < this.board.length; row++) {

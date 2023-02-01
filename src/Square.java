@@ -10,6 +10,11 @@
  * @version: Jan 2023
  */
 
+/**
+ *  Create a draw() method
+ *  should take in the x and y values, view, Graphics g, and the dimensions of the square.
+ *  Use marker to decide which image to draw.
+ */
 public class Square {
 
     private String marker;
@@ -50,6 +55,14 @@ public class Square {
      */
     public boolean isEmpty() {
         return this.marker.equals(TicTacToe.BLANK);
+    }
+
+    /**
+     * Draw method
+     */
+    public void draw(int x, int y, TicTacToeViewer viewer, int width, int height)
+    {
+        //insert stuff
     }
 
     /**
