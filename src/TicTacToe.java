@@ -59,6 +59,7 @@ public class TicTacToe
                 this.board[row][col] = new Square(row, col);
             }
         }
+        ticTacToeViewer = new TicTacToeViewer(board, this);
 
         // Initialize winning stats variables
         this.isGameOver = false;
@@ -66,6 +67,8 @@ public class TicTacToe
         this.winner = BLANK;
         this.winIndex = -1;
         this.winDirection = -1;
+
+
     }
 
     /******************** Methods You May Find Helpful ********************/
@@ -120,6 +123,7 @@ public class TicTacToe
         // Loop until there is a winner or no more turns
         while(!this.checkWin() && this.checkTurn()) {
             this.printBoard();
+            ticTacToeViewer.repaint();
             System.out.println("Enter your Row Pick:" );
             int row = input.nextInt();
             System.out.println("Enter your Col Pick:" );
@@ -132,6 +136,7 @@ public class TicTacToe
         }
 
         this.printBoard();
+        ticTacToeViewer.repaint();
         this.isGameOver = true;
 
         // Determine if there was a winner
@@ -147,6 +152,7 @@ public class TicTacToe
                 System.out.println("X Wins!");
             }
         }
+        ticTacToeViewer.repaint();
     }
 
 
